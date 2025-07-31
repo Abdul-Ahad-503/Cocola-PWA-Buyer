@@ -7,10 +7,10 @@ const Header: React.FC = () => {
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   return (
     <header className="bg-[#E53E3E] rounded-b-4xl px-18 pb-1  ">
-      <div className="head_top flex px-4 gap-5 items-center">
-        <img src={IMAGES.logo} className="relative " alt="Colala Mall Logo" />
+      <div className="head_top flex px-4 gap-5 items-center xl:justify-evenly  ">
+        <img src={IMAGES.logo} className="xl:w-35 " alt="Colala Mall Logo" />
 
-        <div className="inp flex items-center bg-white rounded-xl px-4  shadow w-[417px] h-[60px]">
+        <div className="inp flex items-center bg-white rounded-xl px-4  shadow w-[417px] h-[60px] xl:w-[600px]  ">
           <input
             type="text"
             placeholder="Search any product, shop or category"
@@ -25,11 +25,11 @@ const Header: React.FC = () => {
       
 
       
-      <div className="flex items-center gap-5  text-white pr-4">
+      <div className="flex items-center gap-5 xl:gap-8  text-white pr-4">
         {/* All Categories Dropdown */}
         <div className="relative">
           <button
-            className="bg-white text-black rounded-xl flex items-center gap-2 px-4 py-2 h-[60px] cursor-pointer shadow"
+            className="bg-white text-black rounded-xl flex items-center gap-2 px-4 py-2 h-[60px] cursor-pointer shadow xl:px-6 xl:py-4"
             // onMouseEnter={() => setShowDropdown(true)}
             
             onClick={() => setShowDropdown((prev) => !prev)}
@@ -107,10 +107,10 @@ const Header: React.FC = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setShowUserDropdown((prev) => !prev)}
           >
-            <img src={IMAGES.user} alt="User Icon" className="w-6 h-6" />
-            <div className="flex flex-col leading-tight">
-              <span className="text-xs">Welcome</span>
-              <span className="font-semibold">Sign in/Register</span>
+            <img src={IMAGES.user} alt="User Icon" className="w-6 h-6 xl:w-8 xl:h-8" />
+            <div className="flex flex-col leading-tight ">
+              <span className="text-xs xl:text-sm">Welcome</span>
+              <span className="font-semibold xl:text-lg">Sign in/Register</span>
             </div>
           </div>
           {showUserDropdown && (
@@ -118,37 +118,38 @@ const Header: React.FC = () => {
               <button className="bg-[#E53E3E] text-white rounded-xl py-3 font-semibold mb-2">Login</button>
               <button className="bg-gray-100 text-gray-900 rounded-xl py-3 font-semibold mb-4">Register</button>
               <div className="flex flex-col gap-2">
-                <a href="/orders" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-[#E53E3E] rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.cart} alt="My Orders" className="w-5 h-5" /></span>
-                  <span>My Orders</span>
+                <a href="/orders" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-[#E53E3E] rounded-l-xl"><img src={IMAGES.cart} alt="My Orders" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-[#E53E3E] font-semibold">My Orders</span>
                 </a>
-                <a href="/saved-items" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-purple-400 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.heart} alt="Saved Items" className="w-5 h-5" /></span>
-                  <span>Saved Items</span>
+                <a href="/saved-items" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-purple-400 rounded-l-xl"><img src={IMAGES.heart} alt="Saved Items" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-purple-500 font-semibold">Saved Items</span>
                 </a>
-                <a href="/followed-stores" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-green-500 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.user} alt="Followed Stores" className="w-5 h-5" /></span>
-                  <span>Followed Stores</span>
+                <a href="/followed-stores" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-l-xl"><img src={IMAGES.user} alt="Followed Stores" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-green-500 font-semibold">Followed Stores</span>
                 </a>
-                <a href="/reviews" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-blue-600 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.star} alt="Reviews" className="w-5 h-5" /></span>
-                  <span>Reviews</span>
+                <a href="/reviews" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-blue-600 rounded-l-xl"><img src={IMAGES.star} alt="Reviews" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-blue-600 font-semibold">Reviews</span>
                 </a>
-                <a href="/referrals" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-indigo-500 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.users} alt="Referrals" className="w-5 h-5" /></span>
-                  <span>Referrals</span>
+                <a href="/referrals" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-indigo-500 rounded-l-xl"><img src={IMAGES.users} alt="Referrals" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-indigo-500 font-semibold">Referrals</span>
                 </a>
-                <a href="/support" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-orange-400 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.headset} alt="Support" className="w-5 h-5" /></span>
-                  <span>Support</span>
+                <a href="/support" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-orange-400 rounded-l-xl"><img src={IMAGES.headset} alt="Support" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-orange-400 font-semibold">Support</span>
                 </a>
-                <a href="/faqs" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm hover:bg-gray-100">
-                  <span className="bg-cyan-400 rounded-lg p-2 flex items-center justify-center"><img src={IMAGES.question} alt="FAQs" className="w-5 h-5" /></span>
-                  <span>FAQs</span>
+                <a href="/faqs" className="flex items-center bg-white rounded-xl px-0 py-2 shadow-sm hover:bg-gray-100 relative">
+                  <span className="flex items-center justify-center w-14 h-14 bg-cyan-400 rounded-l-xl"><img src={IMAGES.question} alt="FAQs" className="w-7 h-7" /></span>
+                  <span className="pl-4 text-cyan-400 font-semibold">FAQs</span>
                 </a>
               </div>
               <div className="mt-4">
                 <div className="text-xs text-gray-500 mb-2">Others</div>
+
                 <div className="bg-white rounded-xl px-4 py-3 shadow-sm mb-2">Loyalty Points</div>
                 <div className="bg-white rounded-xl px-4 py-3 shadow-sm">Seller Leaderboard</div>
               </div>
@@ -168,7 +169,7 @@ const Header: React.FC = () => {
       </div>
 
       <div className="head_bottom">
-        <div className="flex gap-25  text-neutral-300 font-thin">
+        <div className="flex gap-25 xl:text-2xl  text-neutral-300 font-thin">
           
           <a href="#"><h3 className="pb-4 active_page" >Home <div className="underline" /></h3></a>
           <a href="#"><h3 className="pb-4 " >Feed <div className="underline" /></h3></a>
