@@ -1,0 +1,28 @@
+
+
+const IMAGES = {
+  camera: '/camera.png',
+  logo: '/Primary_Logo.png',
+  vite: '/vite.svg',
+  user: '/User.png',
+  cart: '/ShoppingCart.png',
+  react: '/react.svg',
+  dropdown: '/CaretDown.png',
+  phone: '/DeviceMobileCamera.png',
+  fashion: '/Dress.png',
+  home: '/Armchair.png',
+  electronics: '/Monitor.png',
+  computing: '/Laptop.png',
+  grocery: '/Cherries.png',
+  automobiles: '/CarSimple.png',
+  garden: '/FlowerLotus.png',
+  gaming: '/Joystick.png',
+  sporting: '/SoccerBall.png',
+  baby: '/BabyCarriage.png',
+  heart: '/Heart.png',
+  star: '/Star.png',
+  users: '/Users.png',
+  headset: '/Headset.png',
+  question: '/Question.png',
+};
+export default IMAGES;
