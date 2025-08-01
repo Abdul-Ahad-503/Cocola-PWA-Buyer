@@ -24,5 +24,12 @@ const IMAGES = {
   users: '/Users.png',
   headset: '/Headset.png',
   question: '/Question.png',
+  ranking: '/Ranking.png',
+  sealPercent: '/SealPercent.png',
+  loginimg: '/login_img.png',
+  lock: '/lock.png',
+  sms: '/sms.png',
+  eye: '/eye.png',
+  xcircle: '/XCircle.png',
 };
 export default IMAGES;
