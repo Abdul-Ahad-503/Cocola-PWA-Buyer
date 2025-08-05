@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 import IMAGES from "../Constants";
 
 interface LoginPopupProps {
@@ -12,6 +13,12 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ open, onClose, onSwitchToRegist
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   if (!open) return null;
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate login success
+    Cookies.set("isLoggedIn", "true", { expires: 7 });
+    if (onClose) onClose();
+  };
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center  backdrop-brightness-50">
       <div className="bg-white rounded-3xl flex w-[786px] max-w-full overflow-hidden shadow-2xl relative">
@@ -24,7 +31,7 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ open, onClose, onSwitchToRegist
           <button onClick={onClose} className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-gray-700"><img src={IMAGES.xcircle} alt="X" className="w-8 h-8 mr-2 cursor-pointer" /></button>
           <h2 className="text-2xl font-bold text-[#E53E3E] mt-10 mb-2">Login</h2>
           <p className="text-gray-500 mb-6">Login to you account</p>
-          <form className="w-full flex flex-col gap-4">
+          <form className="w-full flex flex-col gap-4" onSubmit={handleLogin}>
             <div className="flex items-center bg-[#F7F7F7] rounded-xl px-4 py-3 border border-[#E5E5E5]">
               <img src={IMAGES.sms} alt="email" className="w-5 h-5 mr-2 opacity-70" />
               <input

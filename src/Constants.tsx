@@ -31,5 +31,16 @@ const IMAGES = {
   sms: '/sms.png',
   eye: '/eye.png',
   xcircle: '/XCircle.png',
+  services1: '/Services (1).png',
+  services2: '/Services (2).png',
+  services3: '/Services (3).png',
+  services4: '/Services (4).png',
+  services5: '/Services (5).png',
+  services6: '/Services (6).png',
+  services7: '/Services (7).png',
+  services8: '/Services (8).png',
+  users1: '/Users (1).png',
+  avatar_1 : '/Avatar_1.png',
+  signout: '/SignOut.png',
 };
 export default IMAGES;
