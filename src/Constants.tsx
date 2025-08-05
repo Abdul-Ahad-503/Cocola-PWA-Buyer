@@ -40,7 +40,10 @@ const IMAGES = {
   services7: '/Services (7).png',
   services8: '/Services (8).png',
   users1: '/Users (1).png',
-  avatar_1 : '/Avatar_1.png',
+  avatar_1: '/Avatar_1.png',
   signout: '/SignOut.png',
+  ellipseStore: '/Ellipse_store_img.png',
+  starFilled: '/StarFilled.png',
+  storeImg: '/StoreImg.png',
 };
 export default IMAGES;

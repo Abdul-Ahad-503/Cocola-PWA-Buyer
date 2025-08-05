@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import IMAGES from "../Constants";
 
 const serviceCategories = [
@@ -45,6 +46,12 @@ const serviceCategories = [
 ];
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleViewAllServices = () => {
+    navigate('/all-services');
+  };
+
   return (
     <div className="bg-white min-h-screen py-16">
       {/* Container with max width constraint */}
@@ -52,7 +59,10 @@ const Services: React.FC = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <h1 className="text-4xl font-bold text-black">Service Categories</h1>
-          <button className="bg-[#E53E3E] text-white rounded-xl px-6 py-3 text-sm font-semibold hover:bg-red-600 transition-colors">
+          <button 
+            onClick={handleViewAllServices}
+            className="bg-[#E53E3E] text-white rounded-xl px-6 py-3 text-sm font-semibold hover:bg-red-600 transition-colors"
+          >
             View All Services
           </button>
         </div>
@@ -62,16 +72,16 @@ const Services: React.FC = () => {
           {serviceCategories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow cursor-pointer w-[153px] h-[170px]"
+              className="bg-white rounded shadow-md  border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-shadow cursor-pointer w-[123px] h-[130px]"
             >
               <img
                 src={cat.image}
                 alt={cat.title}
                 className="h-[110px] w-full object-cover"
               />
-              <div className="p-3 flex-1 flex flex-col justify-center">
-                <h2 className="font-semibold text-sm text-black mb-1 leading-tight">{cat.title}</h2>
-                <p className="text-gray-400 text-xs">{cat.listings} Listings</p>
+              <div className="p-3  flex-1 flex flex-col justify-center">
+                <h2 className=" text-[8px] text-black mb-1 ">{cat.title}</h2>
+                <p className="text-gray-400 text-[6px]">{cat.listings} Listings</p>
               </div>
             </div>
           ))}
